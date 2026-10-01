@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace DailyCore.Domain.Entities
 {
@@ -27,6 +25,13 @@ namespace DailyCore.Domain.Entities
                     nameof(nombre));
             }
 
+            if (nombre.Trim().Length > 100)
+            {
+                throw new ArgumentException(
+                    "El nombre de la empresa no puede superar los 100 caracteres.",
+                    nameof(nombre));
+            }
+
             Nombre = nombre.Trim();
             CreatedAt = DateTime.UtcNow;
         }
@@ -40,7 +45,16 @@ namespace DailyCore.Domain.Entities
                     nameof(nuevoNombre));
             }
 
-            Nombre = nuevoNombre.Trim();
+            var nombreLimpio = nuevoNombre.Trim();
+
+            if (nombreLimpio.Length > 100)
+            {
+                throw new ArgumentException(
+                    "El nombre de la empresa no puede superar los 100 caracteres.",
+                    nameof(nuevoNombre));
+            }
+
+            Nombre = nombreLimpio;
         }
 
     }

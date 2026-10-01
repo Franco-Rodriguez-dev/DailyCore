@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="DailyCore.Api/DailyCore.Api.csproj" />
   <Project Path="DailyCore.Application/DailyCore.Application.csproj" />
+  <Project Path="DailyCore.Domain.Tests/DailyCore.Domain.Tests.csproj" />
   <Project Path="DailyCore.Domain/DailyCore.Domain.csproj" />
   <Project Path="DailyCore.Infrastructure/DailyCore.Infrastructure.csproj" />
 </Solution>
