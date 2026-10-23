@@ -1,4 +1,4 @@
-﻿using DailyCore.Application.Empresas.Service;
+using DailyCore.Application.Empresas.Service;
 using Microsoft.AspNetCore.Mvc;
 using DailyCore.Application.Empresas.DTOs;
 
@@ -18,6 +18,8 @@ namespace DailyCore.Api.Controllers
 
 
         [HttpPost]
+        [ProducesResponseType(typeof(CrearEmpresaResponse), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<CrearEmpresaResponse>> Crear ( [FromBody] CrearEmpresaRequest request)
         {
 
